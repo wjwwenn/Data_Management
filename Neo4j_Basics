@@ -1,0 +1,72 @@
+CREATE (:Person)-[:STUDY_IN) -> (:School)
+match (n) return (n)
+
+// detach before delete as there is still a relationship
+match (n) detach delete (n)
+
+create (:Person {name: "Wai Xin"})-
+[:WORKS_AT {dept: "ITOM"}]->
+(:School {name: "Nanyang Technological University"})
+
+match (n {name: "Wai Xin"}) return n
+
+// next section
+match (p1:Person)-[r]->(s:School)
+return p1, r, s
+
+match (p1:Person)-[r]->(s:School)
+where p1.name = 'Wai Xin'
+	return p1, r, s
+
+// next section
+create (:Person {name: "Wai Xin"})-[:LIVES_IN]->(:Counry {name:"Singapore"})
+
+create (:Country {name: "Singapore"})
+
+match (p:Person {name: "Wai Xin"})
+match (c: Country {name: "Singapore"})
+return p, c
+
+// MERGE
+match (p:Person {name: "Wai Xin"})
+match (c: Country {name: "Singapore"})
+merge (p)-[:LIVE_IN{town:"Jurong"}]->(c)
+
+// create and merge with yok yen
+match (c:Country {name: "Singapore"})
+merge (p: Person {name: "Yok Yen"})-[:LIVE_IN{town:"Jurong"}]->(c)
+
+// new section
+create 
+(c:Customer {name:"John Smith"}),
+(o:Order {date:"2021-10-01"}),
+(p:Product {desc: "Nespresso Machine", price:234}),
+(c)-[:PURCHASES {
+                 payment_method: "Credit Card", 
+                 delivery_address: "Somehwere",
+                 channel: "Lazada"}]
+     ->(o)-[:INCLUDES {
+                     quantity:1, 
+                     selling_price:200
+     }]->(p)
+
+match (n:Customer) return n
+
+// change relationship to match channel
+match (:Customer {name:"John Smith"})-[some_relationship]->(:Order) 
+return some_relationship
+
+match (:Customer {name:"John Smith"})-[some_relationship]->(:Order) 
+set some_relationship.channel="Harvey Norman"
+
+// match 
+match ({name: "Wai Xin"})-[r]->(c:Country) return r
+
+// deletion of specific relationship and node uses the DETACH DELETE keyword
+match ({name: "Wai Xin"})-[r]->(c:Country) detach delete r
+
+// next section
+match (n) detach delete n
+:play movie-graph
+
+match (n) return n
