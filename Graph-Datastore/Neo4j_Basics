@@ -70,3 +70,13 @@ match (n) detach delete n
 :play movie-graph
 
 match (n) return n
+
+// Multi relational
+CREATE (js:Person { name: "Tom", from: "Singapore", learn: "surfing" }),
+(cc:Person { name: "Zack", from: "Australia", title: "author" }),
+(rvb:Person { name: "Jenny", from: "Britain", pet: "Goldie" }),
+(ally:Person { name: "Ryan", from: "California", hobby: "surfing" }),
+(n)-[:KNOWS {since: 2010}]->(js),(ee)-[:KNOWS {rating: 5}]->(ir),
+(js)-[:KNOWS]->(ir),(js)-[:KNOWS]->(rvb),
+(ir)-[:KNOWS]->(js),(ir)-[:KNOWS]->(ally),
+(rvb)-[:KNOWS]->(ally)
