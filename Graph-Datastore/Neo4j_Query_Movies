@@ -1,0 +1,38 @@
+// Q1 
+// Who are the actors who acted alongside Tom Hank and in which movies?
+MATCH (n:Person)-[:ACTED_IN]->()<-[:ACTED_IN]-(a:Person)
+WHERE n.name="Tom Hanks"
+RETURN a.name;
+
+// Alternate answer (other group)
+match (n {name:'Tom Hanks'})-[:ACTED_IN]->(m:Movie),(s)-[:ACTED_IN]->(m:Movie) return n,m,s
+
+// Profs answer
+match(:Person{name: "Tom Hanks"})-[:ACTED_IN]->(m:Movie)<-[:ACTED_IN]-(otherActor:Person) return m, otherActor
+
+// Q2 
+// Who are the actors who also produced and directed movies in their career?
+// Prof Answer
+match(actor:Person)-[:ACTED_IN]->(m:Movie)
+match(:Movie)<-[:DIRECTED|PRODUCED]-(actor)
+return actor
+
+// Q3
+// Who are the actors who produced or directed movies they acted in?
+MATCH (n:Person)-[:ACTED_IN]->()<-[:ACTED_IN]-(other)
+WHERE (other)-[:DIRECTED]->()
+RETURN DISTINCT other
+
+// Profs Answer
+match(actor:Person)-[:ACTED_IN]->(m:Movie)
+match(m)<-[:DIRECTED|PRODUCED]-(actor)
+return actor
+
+// Q4
+// How many degree of separation is it between Natalie Portman and Julia Roberts
+match path=shortestpath(
+    (Julia:Person {name: "Julia Roberts"})
+    -[*]-
+    (Natalie:Person {name:"Natalie Portman"})
+    
+    ) return path
