@@ -1,0 +1,56 @@
+{
+    "redeemed_status": "TRUE",
+    "voucher_table": [
+        {
+         "_id" : "123a456b789c101112d1314e",
+         "voucher_id" : ["3001", "3002", "3003"],
+         "total_quantity": 15,
+         "total_set": 3,
+         "percent_off": 0.02,
+         "issue_date": "2021-12-01T20:00:00Z",
+         "expiry_date": "2021-01-01T20:00:00Z",
+         "total_amount_redeemed": "30"
+        }],
+    "redemption_log": [
+        {
+        "transaction_id": "561e53dfa7e6f5f91c63e32e",
+        "user": "2001",
+        "redeemed_by": {
+            "name": {
+                "first": "tommy",
+                "last": "lim"}
+                },
+        "date_redeemed": "2021-12-02T13:08:47.956Z",
+        "amount_redeemed": "10"
+        },
+        {
+        "transaction_id": "561e53f7a7e6f5f91c63e32f",
+        "user": "2001",
+        "redeemed_by": {
+            "name": {
+                "first": "tommy",
+                "last": "lim"}
+                },
+        "date_redeemed": "2021-12-03T13:09:11.592Z",
+        "amount_redeemed": "10"
+        },
+        {
+        "transaction_id": "561e53dfa7e6f5f91c63e32eg",
+        "user": "2001",
+        "redeemed_by": {
+            "name": {
+                "first": "tommy",
+                "last": "lim"}
+                },
+        "date_redeemed": "2021-12-04T14:46:03.289Z",
+        "amount_redeemed": "10"
+        }],
+    "hawker_log": [
+        {
+         "hawker_stall": "Famous Chicken Rice",
+         "cuisine": "Chinese",
+         "name_of_centre": "Adam Road Food Centre",
+         "location_of_centre": "2, Adam Road, S(289876)",
+         "total_voucher_amount": 30
+        }]
+}

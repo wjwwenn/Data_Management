@@ -1,0 +1,49 @@
+{
+    "_id": "61b73dd302b67f6420dc6153",
+    "user_log": [
+    {"name": {
+        "firstname": "tommy",
+        "lastname": "lim"
+    },
+    "gender": "m",
+    "NRIC": "S9182211D",
+    "email": "tommy.lim@example.com",
+    "dob": {
+        "date": "1984-09-30",
+        "age": 33
+        }
+    }],
+    "voucher_log": [
+        {"voucher_id": ["3001", "3002", "3003"],
+        "total_quantity": 15,
+        "total_set": 3,
+        "percent_off": 0.05,
+        "issue_date": "2021-12-01T20:00:00Z",
+        "expiry_date": "2021-01-01T20:00:00Z",
+        "total_amount_redeemed": 30,
+        "payment_method": "card"
+        }],
+    "redemption_log": [
+            {
+            "id": "2001",
+            "updatedAt": "2021-12-01T13:08:47.956Z",
+            "_id": "561e53dfa7e6f5f91c63e32e"
+            },
+            {
+            "id": "2001",
+            "updatedAt": "2015-12-01T13:09:11.592Z",
+            "_id": "561e53f7a7e6f5f91c63e32f"
+            },
+            {
+            "id": "2001",
+            "updatedAt": "2015-12-01T14:46:03.289Z",
+            "_id": "561e6aab4adfac513594bbe6"
+            }
+        ],
+    "settlement_log": [
+        {"redeemed_status": "TRUE",
+         "amount_used": 9.75,
+         "amount_used_tilldate": 9.75,
+         "amount_remaining": "0"
+        }]
+}

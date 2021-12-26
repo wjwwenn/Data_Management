@@ -1,0 +1,36 @@
+{
+    "_id": "61417c028cf41126530ae200",
+    "hawker_log": [
+        {"hawker_id": "1001",
+         "hawker_stall": "Famous Chicken Rice",
+         "location_of_centre": "2, Adam Road, S(289876)",
+         "name_of_centre": "Adam Road Food Centre",
+         "cuisine": "Chinese"
+        }],
+    "redemption_log": [
+        {
+        "hawker_id": "1001",
+        "updatedAt": "2021-12-02T13:08:47.956Z",
+        "_id": "561e53dfa7e6f5f91c63e32e"
+        },
+        {
+        "hawker_id": "1001",
+        "updatedAt": "2015-12-03T13:09:11.592Z",
+        "_id": "561e53f7a7e6f5f91c63e32f"
+        },
+        {
+        "hawker_id": "1001",
+        "updatedAt": "2015-12-04T14:46:03.289Z",
+        "_id": "561e6aab4adfac513594bbe6"
+        }],
+    "settlement_log": [
+        {"redeemed_status": "TRUE",
+         "amount_received": 29.25,
+         "amount_redeemed": 29.25,
+         "amount_tilldate": 29.25,
+         "amount_remaining": 0,
+         "account_no": "108-222-141",
+         "account_type": "savings",
+         "management_fee": 0.15
+        }]
+}
