@@ -1,0 +1,26 @@
+With the Neo4j APOC kit and RDBMS JDBC driver .jar file installed into $NEO4J_HOME\plugins\, we may load the Refinitiv Eikon data from a relational database by running a query: 
+CALL apoc.load.jdbc('jdbc:mysql://localhost:3306/proddb1?user=root&password=huatchye888', “Bloomberg”) YIELD row
+RETURN CurrencyExchange, Inflation, GeopoliticalTension, Natural Disaster, FuelPrice, InterestRates
+
+Alternatively, a CSV file can also be loaded manually: 
+ LOAD CSV WITH HEADERS FROM "file:///Bloomberg.csv" AS row WITH row.CurrencyExchange AS CurrencyExchange, row.Inflation AS Inflation, row.Conflicts AS GeopoliticalTension, row.Disaster AS NaturalDisaster, row.FuelPrice AS FuelPrice, row.InterestRates AS InterestRates RETURN CurrencyExchange, Inflation, GeopoliticalTension, NaturalDisaster, FuelPrice, InterestRates
+
+To create the relationships for analysis:
+CREATE (mkp:Person { name: "MktPrice" }),
+(eca:Person { name: "CurrencyExchange", data: ""}),
+(ecb:Person { name: "Inflation", data: ""}),
+(ecc:Person { name: "GeopoliticalTension", source: "US-Iran", data: ""}),
+(ecd:Person { name: "NaturalDisaster", type: "snow", country: "Australia", data: ""}),
+(ece:Person { name: "FuelPrice", type: "oil", source: "Saudi Arabia", data: ""}),
+(ecf:Person { name: "InterestRates", source: "United States", data: ""}),
+(eca)-[:INFLUENCES {since: 2020}]->(mkp),
+(ecb)-[:INFLUENCES {since: 2022}]->(mkp),
+(ecc)-[:INFLUENCES {since: 2021}]->(mkp),
+(ecd)-[:INFLUENCES {since: 2022}]->(mkp),
+(ece)-[:INFLUENCES {date: "Jan-2020"}]->(mkp),
+(ecc)-[:INFLUENCES ]->(eca),
+(ecb)-[:INFLUENCES ]->(eca),
+(ecf)-[:INFLUENCES ]->(eca)
+
+
+
