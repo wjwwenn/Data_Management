@@ -1,0 +1,11 @@
+With the Neo4j APOC kit and RDBMS JDBC driver .jar file installed into $NEO4J_HOME\plugins\, we may load the Refinitiv Eikon data from a relational database by running a query: 
+CALL apoc.load.jdbc('jdbc:mysql://localhost:3306/proddb1?user=root&password=huatchye888', “Bloomberg”) YIELD row
+RETURN CurrencyExchange, Inflation, GeopoliticalTension, Natural Disaster, FuelPrice, InterestRates
+
+Alternatively, a CSV file can also be loaded manually: 
+ LOAD CSV WITH HEADERS FROM "file:///Bloomberg.csv" AS row WITH row.CurrencyExchange AS CurrencyExchange, row.Inflation AS Inflation, row.Conflicts AS GeopoliticalTension, row.Disaster AS NaturalDisaster, row.FuelPrice AS FuelPrice, row.InterestRates AS InterestRates RETURN CurrencyExchange, Inflation, GeopoliticalTension, NaturalDisaster, FuelPrice, InterestRates
+
+
+
+
+
