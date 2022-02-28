@@ -1,0 +1,46 @@
+{
+    "_id": "12345c028cf41126530ae200",
+    "crop_log": [
+        {"crop_id": "1001",
+         "crop_name": "basil",
+         "crop_type": "herb"
+        }],
+    "sensor_log": [
+        {
+        "sensor_id": "2001",
+        "date_last_updated": "2021-12-02T13:08:47.956Z",
+        "data_confidence": "0.8",
+        "status":"complete"
+        }],
+    "climate_log": [
+        {"climate_id": "3001",
+         "humidity": "",
+         "air_pressure": "",
+         "rainfall": "",
+         "solar_radiation":"",
+         "wind_speed":"",
+         "wind_direction":"",
+         "air_temperature":""
+        }],
+    "pollutant_log": [
+        {"pollutant_id": "4001",
+         "PM10":"",
+         "O3":"",
+         "CO":"",
+         "NO2":"",
+         "NOx":"",
+         "SO2":"",
+         "SOX":""
+            }],
+    "NVDI_log": [
+        {"NVDI_id": "5001",
+         "night":"yes",
+         "dense_dark_vegetation":"",
+         "sunglint":"",
+         "water":"",
+         "cloud_shadow":"",
+         "cloudy":"",
+         "latitude":"1.290270",
+         "longitude":"103.851959"
+            }]
+}
